@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issue Tracker</title>
+    <!-- tailwind css -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <!-- daisy ui -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg-[#F8FAFC] flex items-center justify-center min-h-screen">
+    <div class="login-div bg-[#ffffff] p-8 max-w-md w-full text-center shadow-sm rounded-sm">
+        <img src="./assets/github-logo.png" class="mx-auto mb-[22px]">
+        <h2 class="font-semibold text-[24px]">GitHub Issues Tracker</h2>
+        <p class="font-light text-[16px] text-[#64748B]">Sign in to manage your issues</p>
+
+
+        <fieldset class="fieldset rounded-box w-full">
+        <label class="label text-[12px] font-medium text-black">Username</label>
+        <input type="text" class="input w-full" placeholder="Enter Username" id="name-input"/>
+
+        <label class="label text-[12px] font-medium text-black">Password</label>
+        <input type="password" class="input w-full" placeholder="Enter Password" id="password-input"/>
+
+        <button class="btn btn-primary mt-4 w-full" id="button-id">Sign In</button>
+        </fieldset>
+
+        <div class="flex items-center my-6">
+            <hr class="flex-grow border-t border-gray-200">
+            <span class="mx-4 text-black text-sm">OR</span>
+            <hr class="flex-grow border-t border-gray-200">
+        </div>
+
+        <p class="text-[#64748B] text-[14px] font-light">Demo Credentials:</p>
+        <div class="bg-[#F8FAFC] p-4 w-full">
+            <p>Username: admin</p>
+            <p>Password: admin123</p>
+        </div>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+</html>
