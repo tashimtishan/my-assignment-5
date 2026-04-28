@@ -15,6 +15,7 @@ const modalPriority=document.getElementById("modal-priority");
 const statusOne=document.getElementById("status-one");
 const statusTwo=document.getElementById("status-two");
 const statusModal=document.getElementById("status-modal");
+const loadSpinner=document.getElementById("loading-spinner");
 let allIssues=[];
 
 buttons.forEach(button=>{
@@ -31,9 +32,11 @@ const searchIssues=async(query) => {
         displayissues(allIssues);
         return;
     }
+    loadSpinner.style.display="flex";
    const res=await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${query}`);
    const data=await res.json();
     displayissues(data.data);
+    loadSpinner.style.display="none"
 };
 
 
@@ -60,10 +63,12 @@ const updateIssueCount=(issues, type = "all") => {
 };
 
 const LoadIssues=async()=>{
+    loadSpinner.style.display="flex";
     const res=await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     const data=await res.json();
     allIssues=data.data
     displayissues(data.data)
+    loadSpinner.style.display="none"
 };
 LoadIssues()
 
